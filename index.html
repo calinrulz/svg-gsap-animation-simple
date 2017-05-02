@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVG Animated Progress Bar</title>
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- JS File Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/jquery.gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Add your site or app content here -->
+    <div class="container">
+      <div class="svg-image">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 800 600" enable-background="new 0 0 800 600" xml:space="preserve">
+          <defs>
+            <mask id="gradMask">
+              <path fill="#FFFFFF" d="M730,320H70c-11,0-20-9-20-20l0,0c0-11,9-20,20-20h660c11,0,20,9,20,20l0,0
+                C750,311,741,320,730,320z"/>
+            </mask>
+
+            <pattern id="gradPattern" width="700" height="60" x="0" y="0" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" fill="url(#linear-gradient)" width="700" height="60"/>
+            </pattern>
+          </defs>
+
+          <g>
+            <linearGradient id="linear-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="300" x2="700" y2="300">
+              <stop  offset="0%" style="stop-color:#E91E63"/>
+              <stop  offset="20%" style="stop-color:#E91E63"/>
+              <stop  offset="20%" style="stop-color:#2092DE"/>
+              <stop  offset="40%" style="stop-color:#2092DE"/>
+              <stop  offset="40%" style="stop-color:#FFEB3B"/>
+              <stop  offset="60%" style="stop-color:#FFEB3B"/>
+              <stop  offset="60%" style="stop-color:#8BC34A"/>
+              <stop  offset="80%" style="stop-color:#8BC34A"/>
+              <stop  offset="80%" style="stop-color:#FF5722"/>
+              <stop  offset="100%" style="stop-color:#FF5722"/>
+            </linearGradient>
+
+            <g mask="url(#gradMask)">
+              <rect x="50" y="270" fill="url(#gradPattern)" width="700" height="60"/>
+            </g>
+
+            <line id="highlight" fill="none" opacity="0.4" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="569,8" x1="100" y1="290" x2="700" y2="290"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- build:js scripts/main.min.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
